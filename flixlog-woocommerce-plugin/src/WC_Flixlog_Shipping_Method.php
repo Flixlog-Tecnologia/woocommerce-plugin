@@ -45,6 +45,12 @@ class WC_Flixlog_Shipping_Method extends WC_Shipping_Method {
 				'default'     => __( 'Flixlog', 'flixlog-woocommerce-plugin' ),
 				'desc_tip'    => true,
 			],
+			'origin_postcode' => [
+				'title'       => __( 'Origin Postcode', 'flixlog-woocommerce-plugin' ),
+				'type'        => 'text',
+				'description' => __( 'Postcode of the warehouse attending this zone', 'flixlog-woocommerce-plugin' ),
+				'desc_tip'    => true,
+			],
 			'access_token' => [
 				'title'       => __( 'Access Token', 'flixlog-woocommerce-plugin' ),
 				'type'        => 'text',
@@ -201,7 +207,7 @@ class WC_Flixlog_Shipping_Method extends WC_Shipping_Method {
 	private function calculate_cost_from_api( $package ) {
 		$url      = 'https://api.flixlog.com/api/quotations';
 		$body     = (object)array(
-			'from' => preg_replace('/\D/', '', WC()->countries->get_base_postcode()),
+			'from' => preg_replace('/\D/', '', $this->get_option( 'origin_postcode' )),
 			'to' => preg_replace('/\D/', '', $package['destination']['postcode']),
 			'parcels' => array(),
 		);
