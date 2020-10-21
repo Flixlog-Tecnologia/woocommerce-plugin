@@ -3,15 +3,15 @@
  * Plugin Name: Flixlog Shipping Method for Woocommerce
  * Plugin URI: https://github.com/Flixlog-Tecnologia/woocommerce-plugin
  * Description: A forma mais eficiente de enviar pedidos.
- * Version: 1.0.0
+ * Version: 0.0.2
  * Developer: Yuri Vecchi
  * Developer URI: http://yurivecchi.com.br/
  * Text Domain: flixlog-woocommerce-plugin
  * Domain Path: /languages
- * Requires at least: 5.5.0
+ * Requires at least: 5.4.0
  * Requires PHP: 7.1
  *
- * WC requires at least: 4.5.0
+ * WC requires at least: 4.3.0
  * WC tested up to: 4.5.2
  *
  * License: GNU General Public License v3.0
