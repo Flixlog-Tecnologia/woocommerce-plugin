@@ -206,9 +206,14 @@ class WC_Flixlog_Shipping_Method extends WC_Shipping_Method {
 
 	private function calculate_cost_from_api( $package ) {
 		$url      = 'https://api.flixlog.com/api/quotations';
+		$from = preg_replace('/\D/', '', $this->get_option( 'origin_postcode' ));
+		$to = preg_replace('/\D/', '', $package['destination']['postcode']);
+		if (empty($from) || empty($to)) {
+			return;
+		}
 		$body     = (object)array(
-			'from' => preg_replace('/\D/', '', $this->get_option( 'origin_postcode' )),
-			'to' => preg_replace('/\D/', '', $package['destination']['postcode']),
+			'from' => $from,
+			'to' => $to,
 			'parcels' => array(),
 		);
 
