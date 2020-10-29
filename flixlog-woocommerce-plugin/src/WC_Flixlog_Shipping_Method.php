@@ -240,7 +240,7 @@ class WC_Flixlog_Shipping_Method extends WC_Shipping_Method {
 		foreach ( json_decode( $response, true ) as $rate ) {
 			$this->add_rate(array(
                 'id'      => $this->get_rate_id($rate['carrier_id'] . ':' . $rate['region']),
-                'label'   => $rate['service'],
+                'label'   => $rate['service'] . ' (Entrega ' . $rate['delivery_days'] . ' dias úteis)',
                 'cost'    => $rate['estimated_cost'],
                 'package' => $package,
             ));
