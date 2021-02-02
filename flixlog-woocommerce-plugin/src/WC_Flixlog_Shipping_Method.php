@@ -257,9 +257,8 @@ class WC_Flixlog_Shipping_Method extends WC_Shipping_Method
                 array(
                     'id' => $this->get_rate_id($rate['carrier_canonical_name'] . ':' . $rate['region']),
                     'label' => sprintf(
-                        '%s - %s (Entrega em %s dias úteis)',
+                        '%s (Entrega em %s dias úteis)',
                         $rate['service'],
-                        strtoupper($rate['carrier_canonical_name']),
                         $rate['delivery_days']
                     ),
                     'cost' => $rate['estimated_cost'],
