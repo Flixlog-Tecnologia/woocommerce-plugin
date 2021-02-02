@@ -13,3 +13,4 @@ A forma mais eficiente de enviar pedidos
 == Changelog ==
 v0.0.1 - First Version
 v0.0.2 - Decreasing version requisites
+v0.0.3 - Update Freight API
