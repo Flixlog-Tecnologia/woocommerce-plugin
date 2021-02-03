@@ -263,6 +263,13 @@ class WC_Flixlog_Shipping_Method extends WC_Shipping_Method
                     ),
                     'cost' => $rate['estimated_cost'],
                     'package' => $package,
+                    'meta_data' => [
+                        'carrier' => strtoupper($rate['carrier_canonical_name']),
+                        'delivery_days' => $rate['delivery_days'],
+                        'expedition_time' => $rate['expedition_time'],
+                        'region' => $rate['region'],
+                        'cubed_weight' => $rate['cubed_weight'] . 'kg',
+                    ]
                 )
             );
         }
