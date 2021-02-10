@@ -215,7 +215,7 @@ class WC_Flixlog_Shipping_Method extends WC_Shipping_Method
 
     private function calculate_cost_from_api($package)
     {
-        $url = 'https://freight.flixlog.com/quotation';
+        $url = 'https://freight.flixlog.com/channel-quote/woocommerce?token=' . $this->get_option('access_token');
         $from = preg_replace('/\D/', '', $this->get_option('origin_postcode'));
         $to = preg_replace('/\D/', '', $package['destination']['postcode']);
         if (empty($from) || empty($to)) {
