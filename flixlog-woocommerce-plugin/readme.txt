@@ -15,3 +15,4 @@ v0.0.1 - First Version
 v0.0.2 - Decreasing version requisites
 v0.0.3 - Update Freight API
 v0.0.4 - Remove carrier name
+v0.0.5 - Regras Woocommerce
