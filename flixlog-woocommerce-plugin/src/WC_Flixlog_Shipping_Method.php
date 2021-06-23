@@ -252,7 +252,12 @@ class WC_Flixlog_Shipping_Method extends WC_Shipping_Method
             )
         )['body'];
 
-        foreach (json_decode($response, true) as $rate) {
+        $rates = json_decode($response, true);
+
+        foreach ($rates as $rate) {
+            if (empty($rate['carrier_canonical_name'])) {
+                continue;
+            }
             $this->add_rate(
                 array(
                     'id' => $this->get_rate_id($rate['carrier_canonical_name'] . ':' . $rate['region']),
