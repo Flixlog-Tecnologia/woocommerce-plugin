@@ -227,11 +227,15 @@ class WC_Flixlog_Shipping_Method extends WC_Shipping_Method
             'parcels' => array(),
         );
 
+        $divisor = 1;
+        if ($this->get_option('woocommerce_weight_unit') == 'g') {
+            $divisor = 1000;
+        }
         foreach ($package['contents'] as $content) {
             $body->parcels[] = array(
                 'reference' => $content['data']->get_sku() ?: '',
                 'height' => (float)$content['data']->get_height() / 100,
-                'weight' => (float)$content['data']->get_weight(),
+                'weight' => (float)$content['data']->get_weight() / $divisor,
                 'quantity' => (float)$content['quantity'],
                 'width' => (float)$content['data']->get_width() / 100,
                 'length' => (float)$content['data']->get_length() / 100,

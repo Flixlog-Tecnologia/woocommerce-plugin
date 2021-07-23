@@ -17,3 +17,4 @@ v0.0.3 - Update Freight API
 v0.0.4 - Remove carrier name
 v0.0.5 - Regras Woocommerce
 v0.0.6 - Fix null quotation
+v0.0.7 - Fix unity weight
