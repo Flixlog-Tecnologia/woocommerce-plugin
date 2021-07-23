@@ -1,5 +1,5 @@
 === Flixlog Shipping Method for Woocommerce ===
-Contributors: yurivecchi
+Contributors: yurivecchi, andrekiffer
 Tags: flixlog, shipping, woocommerce
 Requires at least: 5.5
 Tested up to: 5.4
