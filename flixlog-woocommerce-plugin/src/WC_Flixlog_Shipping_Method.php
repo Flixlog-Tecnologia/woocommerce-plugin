@@ -215,7 +215,7 @@ class WC_Flixlog_Shipping_Method extends WC_Shipping_Method
 
     private function calculate_cost_from_api($package)
     {
-        $url = 'https://freight.flixlog.com/channel-quote/woocommerce?token=' . $this->get_option('access_token') . '&unity=' . $this->get_option('woocommerce_weight_unit') . '&unit2=' . get_option('woocommerce_weight_unit');
+        $url = 'https://freight.flixlog.com/channel-quote/woocommerce?token=' . $this->get_option('access_token');
         $from = preg_replace('/\D/', '', $this->get_option('origin_postcode'));
         $to = preg_replace('/\D/', '', $package['destination']['postcode']);
         if (empty($from) || empty($to)) {
@@ -228,7 +228,7 @@ class WC_Flixlog_Shipping_Method extends WC_Shipping_Method
         );
 
         $divisor = 1;
-        if ($this->get_option('woocommerce_weight_unit') == 'g') {
+        if (get_option('woocommerce_weight_unit') == 'g') {
             $divisor = 1000;
         }
         foreach ($package['contents'] as $content) {
